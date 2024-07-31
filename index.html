@@ -968,7 +968,7 @@
   </body>
   <script>
       
-      window.addEventListener('load', function() {
+       window.addEventListener('load', function() {
         const loadingContainer = document.getElementById('loadingContainer');
         loadingContainer.style.display = 'none';
       });
@@ -1092,6 +1092,8 @@
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
       );
     }
+
+    window.addEventListener('scroll', handleScroll);
 
 //     function toggleTheme() {
 //   const body = document.body;
