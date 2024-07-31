@@ -111,6 +111,7 @@
         font-family: "YourFont", sans-serif;
         cursor: url('https://cdn.glitch.global/75d4bced-f813-4941-ba14-1b43819cb770/cursor2.png'), auto;
         background : black;
+        
       }
       
       .loading-container {
@@ -201,7 +202,7 @@
       }
 
       .button-container {
-          display: flex;
+          display: inline-flex;
           align-items: center;
           gap: 20px;
           margin: 0 30px;
@@ -508,7 +509,7 @@
         margin: 0 20px;
         border-radius: 10px;
         box-shadow: 0 0px 10px green;
-        filter: grayscale(1) brightness(0.8) contrast(2) sepia(1) hue-rotate(90deg) saturate(3);
+        filter: grayscale(1) brightness(0.8) contrast(2) sepia(2) hue-rotate(90deg) saturate(3);
       }
 
       .scroll-left {
@@ -623,6 +624,11 @@
     }
   }
 
+      .anon-theme {
+  filter: grayscale(1) brightness(0.8) contrast(1) sepia(2) hue-rotate(90deg) saturate(3);
+}
+      
+      
       
     </style>
   </head>
@@ -656,6 +662,14 @@
         <h1 class="title">$Anon</h1>
         <p class="subtitle">#FreedomWithAnon</p>
       </div>
+
+      
+       <button id="toggle-theme-btn" class="connect-btn" onclick="toggleTheme()">
+  <img id="theme-icon" src="https://cdn.glitch.global/75d4bced-f813-4941-ba14-1b43819cb770/theme.webp" class="button-icon" alt="Theme Icon" />
+  OG Theme
+</button>
+
+      
       <div class="button-container">
         <button id="twitter1" class="connect-btn" onclick="window.open('https://twitter.com/anonpepe_coin', '_blank');">
           <img
@@ -689,12 +703,14 @@
           />
           CMC
         </button>
+        
       </div>
     </div>
     <br>
     <br>
     <br>
     <br>
+    
     
     
     <div class="scrolling-container">
@@ -1077,9 +1093,44 @@
       );
     }
 
-    window.addEventListener('scroll', handleScroll);
+//     function toggleTheme() {
+//   const body = document.body;
+//   const button = document.getElementById('toggle-theme-btn');
+//   const icon = document.querySelector('theme-icon');
+
+//   body.classList.toggle('anon-theme');
+
+//   if (body.classList.contains('anon-theme')) {
+//     button.textContent = 'ANON Theme';
+//     icon.src = 'https://cdn.glitch.global/75d4bced-f813-4941-ba14-1b43819cb770/theme.webp';
+//     button.innerHTML = `<img id="theme-icon" src="${icon.src}" class="button-icon" alt="Theme Icon" /> ANON Theme`;
+//   } else {
+//     button.textContent = 'OG Theme';
+//     icon.src = 'https://cdn.glitch.global/75d4bced-f813-4941-ba14-1b43819cb770/theme.webp';
+//     button.innerHTML = `<img id="theme-icon" src="${icon.src}" class="button-icon" alt="Theme Icon" /> OG Theme`;
+//   }
+// }
     
+    
+    function toggleTheme() {
+  const body = document.body;
+  const button = document.getElementById('toggle-theme-btn');
+
+  body.classList.toggle('anon-theme');
+
+  if (body.classList.contains('anon-theme')) {
+    button.innerHTML = `
+      <img id="theme-icon" src="https://cdn.glitch.global/75d4bced-f813-4941-ba14-1b43819cb770/theme.webp" class="button-icon" alt="Theme Icon" />
+      ANON Theme
+    `;
+  } else {
+    button.innerHTML = `
+      <img id="theme-icon" src="https://cdn.glitch.global/75d4bced-f813-4941-ba14-1b43819cb770/theme.webp" class="button-icon" alt="Theme Icon" />
+      OG Theme
+    `;
+  }
+}
+ 
     
   </script>
 </html>
-
